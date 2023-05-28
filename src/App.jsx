@@ -2,14 +2,14 @@
 // import reactLogo from "./assets/react.svg";
 // import viteLogo from "/vite.svg";
 import "./App.css";
-import Chat from "./components/Chat/Chat";
-import Join from "./components/Join/Join";
+
+import AllRoutes from "./Routes";
+// const [chatObservationState, setChatObservationState] = useState(false);
 
 function App() {
   return (
     <div>
-      <Join />
-      <Chat />
+      <AllRoutes />
     </div>
   );
 }
