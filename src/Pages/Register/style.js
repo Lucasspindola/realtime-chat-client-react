@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
-export const LoginContainer = styled.main`
+export const RegisterContainer = styled.main`
   display: flex;
   align-items: center;
   width: 100vw;
   max-width: 100vw;
-  min-height: 100vh;
+  height: 100vh;
   justify-content: center;
   background-color: #c9e0d6;
   align-items: center;
@@ -53,6 +53,7 @@ export const LoginContainer = styled.main`
       background-color: #b2b9c1;
       color: #ffffff;
       padding: 10px;
+      border-radius: 8px;
     }
     div {
       button {
