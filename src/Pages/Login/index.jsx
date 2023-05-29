@@ -5,6 +5,8 @@ import { instance } from "../../Services/api";
 import { useNavigate } from "react-router-dom";
 import { LoginContainer } from "./style";
 import { toast } from "react-toastify";
+import { useContext } from "react";
+import { ChatContext } from "../../Contexts/ChatContext";
 
 const schema = yup.object().shape({
   nickname: yup
@@ -15,6 +17,7 @@ const schema = yup.object().shape({
 });
 
 const Login = () => {
+  const { profileState, setProfileState } = useContext(ChatContext);
   const navigate = useNavigate();
   const loginUser = (data) => {
     instance
@@ -43,6 +46,10 @@ const Login = () => {
   const onSubmit = (data) => {
     loginUser(data);
     console.log(data);
+  };
+  const loginNow = async () => {
+    await setProfileState(!profileState);
+    navigate("/register");
   };
 
   return (
@@ -78,7 +85,7 @@ const Login = () => {
           </div>
           <div>
             <button type="submit">Entrar</button>
-            <button onClick={() => navigate("/register")}>
+            <button onClick={() => loginNow()}>
               Junte-se a nós! Registre-se agora!
             </button>
           </div>

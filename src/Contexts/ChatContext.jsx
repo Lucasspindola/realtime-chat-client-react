@@ -2,7 +2,7 @@ import { createContext, useEffect, useState } from "react";
 import { instance } from "../Services/api";
 import AllRoutes from "../Routes";
 import { useNavigate } from "react-router-dom";
-import io from "socket.io-client";
+// import io from "socket.io-client";
 import { toast } from "react-toastify";
 
 export const ChatContext = createContext();
@@ -12,17 +12,8 @@ export const ChatContextProvider = () => {
   const [socket, setSocket] = useState(null);
   const [messageList, setMessageList] = useState([]);
   const [listMessages, setListMessages] = useState(false);
+  const [profileState, setProfileState] = useState(false);
   const navigate = useNavigate();
-  const handleSubmitJoin = async () => {
-    const username = userInfo.nickname;
-    if (!username.trim()) return;
-    const socket = await io.connect("http://localhost:3001");
-    socket.emit("set_nickname", username);
-    setSocket(socket);
-    setMessageList([]);
-    listOfPreviousMessages();
-    navigate("/chat");
-  };
 
   useEffect(() => {
     const profileData = () => {
@@ -43,7 +34,7 @@ export const ChatContextProvider = () => {
         });
     };
     profileData();
-  }, []);
+  }, [profileState]);
 
   const newMessage = (data) => {
     data = { message: data };
@@ -100,8 +91,9 @@ export const ChatContextProvider = () => {
         setListMessages,
         listMessages,
         listOfPreviousMessages,
-        handleSubmitJoin,
         logout,
+        profileState,
+        setProfileState,
       }}
     >
       <AllRoutes />

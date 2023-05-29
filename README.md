@@ -1,52 +1,42 @@
 # realtime chat server
 
-url-back:
-produção.
+link-vercel(rodando-localmente):
+https://realtime-chat-client-react.vercel.app/login
+
 front:
 realtime-chat-client-react-ohctl4zzz-lucasspindola.vercel.app
 link repositorio back end;
 https://github.com/Lucasspindola/realtime-chat-server-node
 
-## Tabela de Conteúdos
-
-- [Visão Geral](#1-visão-geral)
-- [Diagrama ER](#2-diagrama-er)
-- [Início Rápido](#3-início-rápido)
-  - [Instalando Dependências](#31-instalando-dependências)
-
----
-
-## 1. Visão Geral
+## Visão Geral
 
 React JS
 
 ---
 
-## 2. Diagrama ER
-
-[ Voltar para o topo ](#tabela-de-conteúdos)
-
-Diagrama ER da API definindo bem as relações entre as tabelas do banco de dados.
-
-![DER](DER-RELATIONS.png)
-
 ---
 
-## 3. Início Rápido
+##
 
 [ Voltar para o topo ](#tabela-de-conteúdos)
 
-### 3.1. Instalando Dependências
+### INSTALAÇÃO
 
-Clone o projeto em sua máquina e instale as dependências com o comando:
+Clone o projeto em sua máquina, na shel entre na pasta criada "realtime-chat-client-react" e instale as dependências com o comando:
 
-```shell
-yarn
 ```
+yarn
+
+```
+
+Rode o projeto com o comando:
 
 ```
 yarn dev
+
 ```
+
+VAI APARECER UM LINK DE ACESSO NA SHEL PARA VISUALIZAÇÃO, ENTRE, PARA FUNCIONAR O BACK DEVE ESTAR RODANDO.
 
 ```
 
