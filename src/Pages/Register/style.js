@@ -79,4 +79,7 @@ export const RegisterContainer = styled.main`
       }
     }
   }
+  .error {
+    color: red;
+  }
 `;
