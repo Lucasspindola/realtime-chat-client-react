@@ -4,6 +4,7 @@ import * as yup from "yup";
 import { instance } from "../../Services/api";
 import { useNavigate } from "react-router-dom";
 import { RegisterContainer } from "./style";
+import { toast } from "react-toastify";
 
 const schema = yup.object().shape({
   nickname: yup
@@ -26,11 +27,14 @@ const Register = () => {
       .post("/users", data)
       .then((res) => {
         localStorage.removeItem("authToken");
-
-        console.log(res);
+        res && toast.success(`Tudo pronto, agora faça login!`);
+        // console.log(res);
         navigate(`/login`);
       })
       .catch((err) => {
+        err &&
+          toast.error(`Ops, houve um erro em nosso servidor. Tente novamente!`);
+
         console.log(err);
       });
   };
@@ -62,7 +66,9 @@ const Register = () => {
               placeholder="Digite seu nickname"
               {...register("nickname")}
             />
-            {errors.nickname && <p>{errors.nickname.message}</p>}
+            {errors.nickname && (
+              <p className="error">{errors.nickname.message}</p>
+            )}
           </div>
           <div>
             <label htmlFor="password">Senha</label>
@@ -72,7 +78,9 @@ const Register = () => {
               placeholder="Digite sua senha"
               {...register("password")}
             />
-            {errors.password && <p>{errors.password.message}</p>}
+            {errors.password && (
+              <p className="error">{errors.password.message}</p>
+            )}
           </div>
           <div>
             <button type="submit">Registrar</button>

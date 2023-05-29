@@ -78,4 +78,7 @@ export const LoginContainer = styled.main`
       }
     }
   }
+  .error {
+    color: red;
+  }
 `;

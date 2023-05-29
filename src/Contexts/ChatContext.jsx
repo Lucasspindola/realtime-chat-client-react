@@ -3,6 +3,7 @@ import { instance } from "../Services/api";
 import AllRoutes from "../Routes";
 import { useNavigate } from "react-router-dom";
 import io from "socket.io-client";
+import { toast } from "react-toastify";
 
 export const ChatContext = createContext();
 
@@ -33,7 +34,8 @@ export const ChatContextProvider = () => {
           },
         })
         .then((res) => {
-          console.log(res.data);
+          // console.log(res.data);
+
           setUserInfo(res.data);
         })
         .catch((error) => {
@@ -71,7 +73,6 @@ export const ChatContextProvider = () => {
       .then((res) => {
         console.log(res.data);
         setMessageList((current) => [...current, ...res.data]);
-        console.log(messageList, "AQUIIIIIIIIIAAAAAAAAAAAAAAAAAAI");
       })
       .catch((error) => {
         console.log(error);
@@ -82,6 +83,8 @@ export const ChatContextProvider = () => {
   const logout = () => {
     window.localStorage.removeItem("authToken");
     setUserInfo();
+    toast.success(`Volte sempre!`);
+
     navigate("/login");
   };
 

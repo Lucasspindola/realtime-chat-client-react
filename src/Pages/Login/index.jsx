@@ -4,6 +4,7 @@ import * as yup from "yup";
 import { instance } from "../../Services/api";
 import { useNavigate } from "react-router-dom";
 import { LoginContainer } from "./style";
+import { toast } from "react-toastify";
 
 const schema = yup.object().shape({
   nickname: yup
@@ -21,11 +22,14 @@ const Login = () => {
       .then((res) => {
         localStorage.removeItem("authToken");
         window.localStorage.setItem("authToken", res.data.token);
-        console.log(res);
+        toast.success(`Seja bem vindo(a)!`);
+
+        // console.log(res);
         navigate(`/join`);
       })
       .catch((err) => {
         console.log(err);
+        toast.error(`Ops, houve um erro confira seus dados. Tente novamente!`);
       });
   };
   const {
@@ -56,7 +60,9 @@ const Login = () => {
               type="text"
               {...register("nickname")}
             />
-            {errors.nickname && <p>{errors.nickname.message}</p>}
+            {errors.nickname && (
+              <p className="error">{errors.nickname.message}</p>
+            )}
           </div>
           <div>
             <label htmlFor="password">Senha</label>
@@ -66,7 +72,9 @@ const Login = () => {
               type="password"
               {...register("password")}
             />
-            {errors.password && <p>{errors.password.message}</p>}
+            {errors.password && (
+              <p className="error">{errors.password.message}</p>
+            )}
           </div>
           <div>
             <button type="submit">Entrar</button>
