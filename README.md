@@ -2,7 +2,7 @@
 
 link-vercel-DEPLOY:
 
-https://realtime-chat-client-react-lucasspindola.vercel.app/login
+https://realtime-chat-client-react.vercel.app/login
 
 documentação:
 
@@ -46,5 +46,3 @@ Rode o projeto com o comando:
 yarn dev
 
 ```
-
-
