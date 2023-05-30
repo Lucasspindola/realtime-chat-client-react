@@ -72,7 +72,7 @@ E necessario criar um novo banco de dados postgres.
 
 **Agora que já foi criado o banco de dados configure as variáveis de ambiente no seu .env**, passando as credenciais corretas para conectar em seu banco local
 
-### 3.3 Conectando database
+###  Conectando database
 
 Não esquecer de rodar as migrações existentes para criar as tabelas com o comando a baixo.
 
