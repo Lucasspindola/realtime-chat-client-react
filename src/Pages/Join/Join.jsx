@@ -22,9 +22,7 @@ export const Join = () => {
   const handleSubmit = async () => {
     const username = userInfo.nickname;
 
-    const socket = await io.connect(
-      "https://chatroom-api-deploy.onrender.com/"
-    );
+    const socket = await io.connect("http://localhost:3001/");
     socket.emit("set_nickname", username);
     setSocket(socket);
     setMessageList([]);

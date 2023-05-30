@@ -48,17 +48,12 @@ export const Chat = () => {
         </button>
       </header>
       <ul>
-        {
-          (console.log(messageList),
-          messageList.map((message, index) => (
-            <li key={index} className="message-author">
-              <h4>
-                {message.nickname ? message.nickname : userInfo.nickname}:
-              </h4>
-              <span className="message-text">{message.textMessage}</span>
-            </li>
-          )))
-        }
+        {messageList.map((message, index) => (
+          <li key={index} className="message-author">
+            <h4>{message.nickname ? message.nickname : userInfo.nickname}:</h4>
+            <span className="message-text">{message.textMessage}</span>
+          </li>
+        ))}
       </ul>
       <footer>
         <input
