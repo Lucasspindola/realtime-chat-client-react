@@ -10,7 +10,7 @@ export const ChatContainer = styled.main`
   max-height: 100vh;
   background-color: #c9e0d6;
   ul {
-    max-height: 90vh;
+    height: 90vh;
     overflow-x: hidden;
     width: 80%;
     display: flex;
@@ -59,6 +59,7 @@ export const ChatContainer = styled.main`
     display: flex;
     flex-direction: row;
     width: 100%;
+    height: 10vh;
     bottom: 0;
     left: 0;
 
@@ -72,7 +73,7 @@ export const ChatContainer = styled.main`
       align-items: center;
       background-color: #7599b3;
       color: #ffffff;
-      border-radius: 8px;
+      border-radius: 0 8px 8px 0;
       font-family: inherit;
       font-size: 17px;
       cursor: pointer;
@@ -102,7 +103,7 @@ export const ChatContainer = styled.main`
     background-color: #7599b3;
     border-bottom: 1px solid #000;
     box-shadow: 0px 5px 5px -5px rgba(0, 0, 0, 0.5);
-    height: 100%;
+    height: 10vh;
     button {
       width: 50px;
       height: 50px;

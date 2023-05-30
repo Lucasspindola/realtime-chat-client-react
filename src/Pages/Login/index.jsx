@@ -19,15 +19,15 @@ const schema = yup.object().shape({
 const Login = () => {
   const { profileState, setProfileState } = useContext(ChatContext);
   const navigate = useNavigate();
-  const loginUser = (data) => {
+  const loginUser = async (data) => {
     instance
       .post("/session", data)
       .then((res) => {
         localStorage.removeItem("authToken");
         window.localStorage.setItem("authToken", res.data.token);
+        setProfileState(!profileState);
         toast.success(`Seja bem vindo(a)!`);
 
-        // console.log(res);
         navigate(`/join`);
       })
       .catch((err) => {
@@ -45,10 +45,8 @@ const Login = () => {
 
   const onSubmit = (data) => {
     loginUser(data);
-    console.log(data);
   };
   const loginNow = async () => {
-    await setProfileState(!profileState);
     navigate("/register");
   };
 
