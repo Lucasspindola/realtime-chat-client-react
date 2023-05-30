@@ -1,14 +1,22 @@
 # realtime chat server
 
 link-vercel-DEPLOY:
+
 https://realtime-chat-client-react-lucasspindola.vercel.app/login
 
-url:  
+documentação:
+
+https://documentation-api-chat-node-ts.vercel.app/
+
+url-base:
+
 https://chatroom-api-deploy.onrender.com/
 
-lin repositorio front-end:
+link repositorio front-end:
+
 realtime-chat-client-react-ohctl4zzz-lucasspindola.vercel.app
-link repositorio back end;
+
+link repositorio back end:
 https://github.com/Lucasspindola/realtime-chat-server-node
 
 ## Visão Geral
