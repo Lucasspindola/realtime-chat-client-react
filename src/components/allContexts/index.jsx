@@ -3,7 +3,7 @@ import { ChatContextProvider } from "../../Contexts/ChatContext";
 
 export const AllContexts = ({ children }) => (
   <>
-    <ChatContextProvider>{children}</ChatContextProvider>;
+    <ChatContextProvider>{children}</ChatContextProvider>
     <ToastContainer
       position="top-right"
       autoClose={1000}
