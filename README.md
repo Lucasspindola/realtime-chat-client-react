@@ -12,10 +12,6 @@ url-base:
 
 https://chatroom-api-deploy.onrender.com/
 
-link repositorio front-end:
-
-realtime-chat-client-react-ohctl4zzz-lucasspindola.vercel.app
-
 link repositorio back end:
 https://github.com/Lucasspindola/realtime-chat-server-node
 
