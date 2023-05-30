@@ -2,12 +2,9 @@ import { useContext, useEffect, useRef } from "react";
 import { ChatContext } from "../../Contexts/ChatContext";
 import { ChatContainer } from "./style";
 
-// import io from "socket.io-client";
-
 export const Chat = () => {
   const { socket, newMessage, messageList, setMessageList, userInfo, logout } =
     useContext(ChatContext);
-  console.log("PASSOU AQUI");
   useEffect(() => {
     const receiveMessageHandler = (data) => {
       setMessageList((current) => [...current, data]);
@@ -25,7 +22,6 @@ export const Chat = () => {
     const message = messageRef.current.value;
     if (!message.trim()) return;
     socket.emit("message", message);
-    console.log(message);
     newMessage(message);
 
     resetInput();

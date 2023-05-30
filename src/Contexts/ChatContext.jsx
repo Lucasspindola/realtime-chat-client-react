@@ -16,24 +16,27 @@ export const ChatContextProvider = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const profileData = () => {
-      const token = window.localStorage.getItem("authToken");
-      instance
-        .get(`/users/profile`, {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        })
-        .then((res) => {
-          // console.log(res.data);
+    const token = window.localStorage.getItem("authToken");
 
-          setUserInfo(res.data);
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    };
-    profileData();
+    if (token) {
+      const profileData = () => {
+        instance
+          .get(`/users/profile`, {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          })
+          .then((res) => {
+            // console.log(res.data);
+            setUserInfo(res.data);
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      };
+
+      profileData();
+    }
   }, [profileState]);
 
   const newMessage = (data) => {
@@ -46,7 +49,7 @@ export const ChatContextProvider = () => {
         },
       })
       .then((res) => {
-        console.log(res.data);
+        // console.log(res.data);
       })
       .catch((error) => {
         console.log(error);
@@ -62,12 +65,11 @@ export const ChatContextProvider = () => {
         },
       })
       .then((res) => {
-        console.log(res.data);
+        // console.log(res.data);
         setMessageList((current) => [...current, ...res.data]);
       })
       .catch((error) => {
         console.log(error);
-        console.log("ERROU GET LIST");
       });
   };
 
@@ -77,6 +79,13 @@ export const ChatContextProvider = () => {
     toast.success(`Volte sempre!`);
 
     navigate("/login");
+  };
+
+  const sendToLogin = () => {
+    const token = window.localStorage.getItem("authToken");
+    if (!token) {
+      navigate("/login");
+    }
   };
 
   return (
@@ -94,6 +103,7 @@ export const ChatContextProvider = () => {
         logout,
         profileState,
         setProfileState,
+        sendToLogin,
       }}
     >
       <AllRoutes />

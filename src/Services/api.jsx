@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const instance = axios.create({
-  baseURL: "http://localhost:3001/",
+  baseURL: "https://chatroom-api-deploy.onrender.com/",
   timeout: 8000,
   headers: { "Content-Type": "application/json" },
 });

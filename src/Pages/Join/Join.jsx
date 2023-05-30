@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { ChatContext } from "../../Contexts/ChatContext";
 import { JoinContainer } from "./style";
 import { TbDoorExit } from "react-icons/tb";
@@ -12,13 +12,19 @@ export const Join = () => {
     setSocket,
     setMessageList,
     listOfPreviousMessages,
+    sendToLogin,
   } = useContext(ChatContext);
   const navigate = useNavigate();
-  const handleSubmitJoin = async () => {
+
+  useEffect(() => {
+    sendToLogin();
+  });
+  const handleSubmit = async () => {
     const username = userInfo.nickname;
 
-    if (!username.trim()) return;
-    const socket = await io.connect("http://localhost:3001");
+    const socket = await io.connect(
+      "https://chatroom-api-deploy.onrender.com/"
+    );
     socket.emit("set_nickname", username);
     setSocket(socket);
     setMessageList([]);
@@ -35,7 +41,7 @@ export const Join = () => {
           <h3> Olá, {userInfo?.nickname}. Seja bem-vindo(a)!</h3>
         </div>
         <div>
-          <button className="btnOpen" onClick={() => handleSubmitJoin()}>
+          <button className="btnOpen" onClick={() => handleSubmit()}>
             Entrar
           </button>
           <button className="btnExit" onClick={() => logout()}>
