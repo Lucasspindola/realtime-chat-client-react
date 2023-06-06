@@ -57,14 +57,17 @@ button{
     --font-family-title: 'Lexend', sans-serif;
     --font-family-text: 'Inter', sans-serif;
 
-    --brand-1:rgba(0, 103, 129, 1);
-    --brand-2: rgba(52, 59, 65, 0.4);
-    --brand-3: rgb(103, 58, 183, 0.6);
-    --brand-3-hover: rgb(103, 58, 183);
+    --brand-1: #c9e0d6;;
+    --brand-2:  #7599b3;
+    --brand-3:#646cff;
+    /* --brand-3-hover: rgb(103, 58, 183); */
+    
+    
 
     --grey-0: rgba(52, 59, 65, 0.5);
     
-    --white-1:#f8f9fa;
+    --white-1: #ffffff;
+    --grey-1:  #b2b9c1;
 
 
 

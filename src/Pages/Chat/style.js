@@ -8,7 +8,7 @@ export const ChatContainer = styled.main`
   max-width: 100vw;
   height: 100vh;
   max-height: 100vh;
-  background-color: #c9e0d6;
+  background-color: var(--brand-1);
   ul {
     height: 90vh;
     overflow-x: hidden;
@@ -17,16 +17,16 @@ export const ChatContainer = styled.main`
     flex-direction: column;
     align-items: center;
     justify-content: start;
-    gap: 10px;
+    gap: 15px;
     li {
       background-color: #838abd;
-      width: 100%;
+      width: 90%;
       max-width: 100%;
       display: flex;
       padding: 20px 20px;
       flex-direction: column;
       gap: 10px;
-      border-radius: 40px;
+      border-radius: 0 40px 40px 40px;
       span {
         display: flex;
         flex-wrap: wrap;
@@ -63,7 +63,7 @@ export const ChatContainer = styled.main`
     bottom: 0;
     left: 0;
 
-    background-color: #f5f5f5;
+    box-shadow: 0px -10px 10px -10px rgba(0, 0, 0, 0.5);
 
     button {
       display: flex;
@@ -71,22 +71,25 @@ export const ChatContainer = styled.main`
       min-height: 100%;
       justify-content: center;
       align-items: center;
-      background-color: #7599b3;
-      color: #ffffff;
+      background-color: var(--brand-2);
+      color: var(--white-1);
+      border: none;
+      outline: none;
       border-radius: 0 8px 8px 0;
       font-family: inherit;
       font-size: 17px;
       cursor: pointer;
       transition: border-color 0.25s;
       padding: 10px;
+      outline: 0;
     }
     input {
       display: flex;
       width: 100%;
       max-width: 100%;
       border: none;
-      background-color: #b2b9c1;
-      color: #ffffff;
+      background-color: var(--grey-1);
+      color: var(--white-1);
       width: 85%;
       height: 100%;
       padding: 0 10px;
@@ -100,16 +103,23 @@ export const ChatContainer = styled.main`
     width: 100%;
     bottom: 0;
     left: 0;
-    background-color: #7599b3;
+    background-color: var(--brand-2);
     border-bottom: 1px solid #000;
     box-shadow: 0px 5px 5px -5px rgba(0, 0, 0, 0.5);
     height: 10vh;
+
+    h1 {
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      font-size: 24px;
+    }
     button {
       width: 50px;
       height: 50px;
+      border: 1px color #000;
+      /* outline: none; */
       border-radius: 10px;
       background-color: #838abd;
-      color: #ffffff;
+      color: var(--white-1);
       cursor: pointer;
     }
   }

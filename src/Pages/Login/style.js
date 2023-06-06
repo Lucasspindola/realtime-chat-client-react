@@ -7,26 +7,25 @@ export const LoginContainer = styled.main`
   max-width: 100vw;
   min-height: 100vh;
   justify-content: center;
-  background-color: #c9e0d6;
+  background-color: var(--brand-1);
   align-items: center;
 
   .title {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #7599b3;
+    background-color: var(--brand-2);
     height: 55px;
-    /* margin-top: "-1.5rem"; */
     h3 {
       font-size: 25px;
-      color: #ffffff;
+      color: var(--white-1);
     }
   }
   .cotainerMain {
     display: flex;
     flex-direction: column;
     gap: 30px;
-    background-color: #ffffff;
+    background-color: var(--white-1);
     width: 80%;
     max-width: 500px;
   }
@@ -50,8 +49,8 @@ export const LoginContainer = styled.main`
       max-width: 100%;
       height: 35px;
       border: none;
-      background-color: #b2b9c1;
-      color: #ffffff;
+      background-color: var(--grey-1);
+      color: var(--white-1);
       padding: 10px;
     }
     div {
@@ -61,8 +60,8 @@ export const LoginContainer = styled.main`
         justify-content: center;
         align-items: center;
         max-width: 100%;
-        background-color: #7599b3;
-        color: #ffffff;
+        background-color: var(--brand-2);
+        color: var(--white-1);
         border-radius: 8px;
         font-family: inherit;
         cursor: pointer;
@@ -70,7 +69,7 @@ export const LoginContainer = styled.main`
         height: 35px;
       }
       button:hover {
-        border-color: #646cff;
+        border-color: var(--brand-3);
       }
       button:focus,
       button:focus-visible {

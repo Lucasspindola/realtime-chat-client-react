@@ -7,7 +7,7 @@ export const JoinContainer = styled.div`
   max-width: 100vw;
   height: 100vh;
   justify-content: center;
-  background-color: #c9e0d6;
+  background-color: var(--brand-1);
   align-items: center;
   .background-icon {
     width: 20%;
@@ -22,7 +22,7 @@ export const JoinContainer = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #7599b3;
+    background-color: var(--brand-2);
     min-height: 80px;
     border-radius: 20px;
   }
@@ -36,7 +36,7 @@ export const JoinContainer = styled.div`
 
   h3 {
     font-size: 25px;
-    color: #ffffff;
+    color: var(--white-1);
   }
 
   button {
@@ -45,8 +45,8 @@ export const JoinContainer = styled.div`
     justify-content: center;
     align-items: center;
     max-width: 100%;
-    background-color: #7599b3;
-    color: #ffffff;
+    background-color: var(--brand-2);
+    color: var(--white-1);
     border-radius: 8px;
     font-family: inherit;
     font-size: 20px;
@@ -55,7 +55,7 @@ export const JoinContainer = styled.div`
     height: 40px;
   }
   button:hover {
-    border-color: #646cff;
+    border-color: var(--brand-3);
   }
   button:focus,
   button:focus-visible {
